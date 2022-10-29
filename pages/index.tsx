@@ -18,25 +18,7 @@ export default function Home() {
   const handleSubtract = () => {
     setCount((count) => count - 1)
     dispatch(subtract())
-  }
-  const functionalState = () => {
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>Click me</button>
-      </div>
-    )
-  }
-  const disfunctionalState = () => {
-    return (
-      <div className={styles.description}>
-        <button onClick={() => handleAdd()}>+</button>
-        <h1>Count: {count}</h1>
-        <h1>State: {stateInt}</h1>
-        <button onClick={() => handleSubtract()}>-</button>
-      </div>
-    )
-  }
+  } 
 
   return (
     <div className={styles.container}>
@@ -46,8 +28,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div>{disfunctionalState()}</div>
+      <main className={styles.main}> 
+          <button onClick={() => handleAdd()}>+</button>
+          <h1>Count: {count}</h1>
+          <h1>State: {stateInt}</h1>
+          <button onClick={() => handleSubtract()}>-</button> 
       </main>
     </div>
   )
